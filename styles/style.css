@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    width: 100%;
+}
+
+#logop {
+    width: 100px;
+    height: 100px;
+    margin-left: -40px;
+}
+
+body {
+    background-color: #1a1d2d;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+}
+
+.header .title #title {
+    margin: 20px;
+    font-size: 2em;
+    color: white;
+}
+
+.header .title #subtitle {
+    margin-left: 20px;
+    margin-top: -20px;
+    font-size: 1em;
+    color: white;
+}
+
+
+.navo ul {
+    display: flex;
+    margin-top: 40px;
+}
+
+.navo ul li {
+    list-style: none;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 0 50px;
+}
+
+.navo ul li a {
+   color: white;
+   text-decoration: none;
+}
+
+#home {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 50px;
+    height: 50px; 
+    background-color: #2ecc71;
+    border-radius: 10px;
+  }
+  
+
+@media only screen and (max-width : 810px) {
+    
+    .navo ul {
+        display: none;
+    }
+    
+}
