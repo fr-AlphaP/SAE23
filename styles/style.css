@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+
+    /* background-color: rgb(198, 198, 230); */
+    /* height: 1vh; */
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.header {
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1a1d2d;
+    height: 15vh;
+    border-top: #2ecc71 2px solid;
+}
+
+.title {
+    /* background-color: #0000ff; */
+    padding: 1.2vw;
+    color: whitesmoke;
+}
+
+.logo-container {
+    /* background-color: green; */
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.logo-container #logo {
+    padding-top: 3.5vh;
+    padding-left: 0.5vw;
+
+    width: 8vh;
+    height: 8vh;
+}
+
+.nav {
+    /* background-color: yellow; */
+    background-color: #1a1d2d;
+    flex-grow: 1;
+    display: flex; /* Ajouté : Fait de .nav un conteneur flex */
+    flex-wrap: wrap;
+    align-items: center; /* Ajouté : Centre verticalement l'enfant (ul) */
+    justify-content: center; /* Optionnel : si vous voulez aussi centrer le ul horizontalement dans .nav */
+}
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; /* Vertically center the items */
+    list-style-type: none;
+    width: 100%; /* Optionnel : pour que le ul prenne toute la largeur de .nav */
+    padding: 10px 0; /* Optionnel : ajoute un peu de padding vertical à l'intérieur du ul */
+}
+
+.nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li a {
+    font-size: 1.1vw;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    border-top: 2px solid #2ecc71;
+    height: 100%; 
+    /* background-image: url("../styles/img/tk78.webp"); */
+    /* ou */
+    background-image: url("../styles/img/bmwb3.jpg");
+    background-position: center -25vh; 
+    background-size: cover; 
+    background-repeat:
+     no-repeat;
+    border-bottom: #2ecc71 2px solid; 
+}
+
+.carbon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100vh;
+    box-shadow: inset 18cm 0px 45px 5px rgba(0, 0, 0, 0.7); /* Ombre intérieure de 3cm vers la gauche, plus épaisse */
+}
+
+
+
+#carbon-img {
+    /* background-color: chocolate; */
+    height: 25vh;
+    width: 20vw;
+}
+
+.desc1 {
+    color: white;
+    width: 40%;
+    /* background-color: cornflowerblue; */
+}
+
+.desc1 h2 {
+    padding-top: 10vh;
+    padding-left: 5vh;
+    font-size: 4vw;
+
+}
+.desc1 h1 {
+    padding-left: 5vh;
+    margin-top: -5vh;
+    font-size: 8vw;
+ 
+}
+.desc1 p {
+    padding-left: 5vh;
+    padding-right: 5vh;
+    margin-top: -1vh;
+
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 6vh;
+    margin-top: 5vh;
+}
+
+.btns #btn1 {
+    background-color: #146ec2;
+    border: 2px solid #2ecc71;
+    padding: 1vh 2vw;
+    font-size: 1.3vw;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btns #btn1 a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.btns #btn2 {
+    background-color: #0e5f3000;
+    border: 2px solid #2e7acc;
+    color: white;
+    padding: 1vh 2vw;
+    font-size: 1.3vw;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btns #btn2 a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.specs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    height: 41.2vh;
+    width: 100%;
+    /* background-color: brown; */
+}
+
+.specs hr {
+    margin-bottom: 5%;
+    width: 80%;
+    height: 2px;
+    background-color: #2ecc71;
+    border: none;
+}
+
+.specs h3 {
+    color: white;
+    font-size: 2vw;
+}
+
+.specs ul {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* list-style-type: none; */
+    width: 80%;
+    padding: 0;
+    gap: 1.5vw;
+    list-style-type: none;
+}
+.specs ul li b {
+    justify-content: space-between;
+    font-size: 1.5vw;
+}
+
+
+/* Après intro */
+
+.entredeux {
+    height: 57vh;
+    /* background-color: rgb(255, 0, 0); */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entredeux .description {
+    margin-top: 2vw;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    /* background-color: #2ecc71; */
+}
+
+.entredeux .description h2 {
+    color: black;
+    font-size: 2vw;
+    text-align: center;
+    padding: 2vw;
+}
+
+.entredeux .description p {
+    padding: 2vw;
+    color: black;
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+
+.entredeux .description2 h2 {
+    color: black;
+    font-size: 2vw;
+    text-align: center;
+    padding-bottom: 2vw;
+}
+
+.entredeux .description2 p {
+    color: black;
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+
+/* Configurateur */
+
+.models {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 60vh;
+    /* background-color: violet; */
+    width: 100%;
+}
+
+.voiture {
+    flex-grow: 2;
+    flex-basis: 0;
+    height: 70vh;
+    /* background-color: #2ecc71; */
+}
+
+#bmw-img {
+    margin-top: -15vh;
+}
+
+.buttons {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 70vh;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.buttons .style-title{
+    width: 100%;
+    height: 30%;
+    /* background-color: #2ecc71; */
+}
+
+.style-title p {
+    padding-top: 9vh;
+    padding-left: 13vh;
+    font-size: 2vw;
+    color: black;
+    font-weight: bold;
+}
+
+.styleconf {
+    align-self: center;
+    margin: auto;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 13vh;
+    /* background-color: blueviolet; */
+}
+
+.styleconf button {
+    margin-top: -5vh;
+    width: 60%;
+    height: 15%;
+    background-color: #0e5f3000;
+    border: 2px solid #2e7acc;
+    color: rgb(0, 0, 0);
+    padding: 1vh 2vw;
+    font-size: 1.3vw;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+
+}
+
+.voiture img {
+    width: 100vh;
+    margin-left: 9vh;
+}
+
+.style-carname {
+    width: 100%;
+    height: 10vh;
+}
+
+.style-carname p {
+    font-size: 4vh;
+    padding: 2.5vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh;
+}
+
+.models-desc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20vh;
+    /* background-color: blue; */
+}
+
+
+.models-desc-g {
+    flex-grow: 1;
+}
+
+.models-desc-d {
+    margin-left: 10vw;
+    margin-top: -8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    font-size: 2.5vh;
+    flex-grow: 1;
+}
+
+#puissance {
+    flex-basis: 0;
+    flex-grow: 1;
+    /* background-color: red; */
+}
+   
+#zeroacent {
+    flex-basis: 0;
+    flex-grow: 1;
+    /* background-color: red; */
+}
+#autonomie {
+    flex-basis: 0;
+    flex-grow: 1;
+    /* background-color: red; */
+}
+#vmax {
+    flex-basis: 0;
+    flex-grow: 1;
+    /* background-color: red; */
+}
+
+button {
+    /* Vos styles communs ici, par exemple : */
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Assurer la cohérence de la police */
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Transitions pour plusieurs propriétés */
+}
+
+/* Animation de survol pour tous les boutons */
+button:hover {
+    transform: scale(1.05); /* Léger zoom au survol */
+    /* Vous pouvez ajouter d'autres effets de survol communs ici */
+}
+
+/* Animation de clic pour tous les boutons */
+button:active {
+    transform: scale(1.08); /* Zoom un peu plus important au clic */
+    transition-duration: 0.1s; /* Rendre le "pressage" un peu plus rapide */
+    /* Vous pouvez ajouter d'autres effets de clic communs ici */
+}
+
+.video {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #2ecc71; */
+    height: 85vh;
+    width: 100%;
+}
+
+.photos {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150vh;
+    /* background-color: #2ecc71; */
+}
+
+.pho-title {
+    margin: 5vh auto;
+    /* background-color: aquamarine; */
+    width: 25%;
+    color: black;
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 2vw;
+}
+
+.divdediv {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.photo1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(0, 123, 255); */
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50vh;
+    min-width: 20vh;
+}
+
+.photo1-text {
+    color: black;
+    width: 85%;
+}
+
+.photo1-text p {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#photo1 {
+    width: 70%;
+    border-radius: 5px;
+}
+
+/* Photo 2 */
+
+.photo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(0, 123, 255); */
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50vh;
+    min-width: 30vh;
+}
+
+.photo2-text {
+    color: black;
+    width: 85%;
+}
+
+.photo2-text p {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#photo2 {
+    width: 70%;
+    border-radius: 5px;
+}
+
+/* Photo 3 */
+
+.photo3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(0, 123, 255); */
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50vh;
+    min-width: 20vh;
+}
+
+.photo3-text {
+    color: black;
+    width: 85%;
+}
+
+.photo3-text p {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#photo3 {
+    width: 70%;
+    border-radius: 5px;
+}
+
+/* Le design intérieur  */
+
+
+.deux-divdediv {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.deux-photo1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(0, 123, 255); */
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50vh;
+    min-width: 35vh;
+}
+
+.deux-photo1-text {
+    color: black;
+    width: 85%;
+}
+
+.deux-photo1-text p {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#deux-photo1 {
+    width: 70%;
+    border-radius: 5px;
+}
+
+/* Photo 2 */
+
+.deux-photo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(0, 123, 255); */
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50vh;
+    min-width: 40vh;
+}
+
+.deux-photo2-text {
+    color: black;
+    width: 85%;
+}
+
+.deux-photo2-text p {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#deux-photo2 {
+    width: 70%;
+    border-radius: 5px;
+}
+
+/* Photo 3 */
+
+.deux-photo3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(0, 123, 255); */
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 50vh;
+    min-width: 40vh;
+}
+
+.deux-photo3-text {
+    color: black;
+    width: 85%;
+}
+
+.deux-photo3-text p {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#deux-photo3 {
+    width: 70%;
+    border-radius: 5px;
+}
+
+
+
+
+/* Bas de page */
+.footer {
+    overflow: none;
+    /* background-color: #2e7acc; */
+    font-size: 3vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 20vw;
+    min-width: 35vh
+
+}
+
+#hrbas {
+    margin-top: 10vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 2px;
+    background-color: #2ecc71;
+    border: none;
+}

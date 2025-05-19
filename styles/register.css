@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1d2d;
+}
+
+h1 {
+  margin: 20px;
+  font-size: 2em;
+  margin-bottom: 1rem;
+  color: white;
+  position: absolute;
+}
+h3 {
+  margin: 20px;
+  font-size: 2em;
+  margin-bottom: 1rem;
+  color: white;
+  position: absolute;
+}
+
+hr {
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  background-color: #1a1d2d;
+}
+
+.notif {
+  width: 40%;
+  background-color: #42496e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 105vh;
+  border-radius: 25px;
+  border: 1px solid #2ecc71;
+}
+
+.notif #title {
+  color: white;
+  font-size: 2em;
+}
+
+.notif b {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.champs {
+  background-color: #42496e;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 1rem;
+}
+
+
+.loginbtn {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #09a54a;
+  color: white;
+  font-weight: bold;
+  width: 80%;
+}
+
+.registerbtn {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #093caa;
+  color: white;
+  font-weight: bold;
+  width: 80%;
+}
+
+.champs input {
+  width: 100%;
+  padding: 12px;
+  background-color: #42496e;
+  border: 1px solid #3a3e52;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 1px;
+  box-sizing: border-box;
+}
+
+.champs p {
+  color : white;
+  text-align: center;
+}
+
+.champs a {
+  color: #2ecc71;
+  text-decoration: none;
+}
+
+.home {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: #2ecc71;
+  border-radius: 10px;
+}
+
+label {
+  background-color: #42496e;
+}
+
+input {
+  background-color: #42496e;;
+}
+
+p {
+  background-color: #42496e;;
+}
+
+a {
+  background-color: #42496e;;
+}
+
+b {
+  background-color: #42496e;;
+}
+
+
+@media screen and (max-height: 915px) and (max-width: 500px) {
+  .notif {
+    width: 90%;
+    height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+    padding-top: 20px; /* Ajoute un peu d'espace en haut à l'intérieur de .notif */
+    padding-bottom: 20px; /* Ajoute un peu d'espace en bas à l'intérieur de .notif */
+  }
+
+  .notif #title {
+    font-size: 1.6em; /* Réduit la taille du titre du formulaire */
+    margin-bottom: 10px;
+  }
+  .home {
+    width: 40px;
+    height: 40px;
+  }
+ 
+  h1 {
+    font-size: 1.5em; /* Réduit la taille du titre sur les petits écrans */
+  }
+
+}
+
+ @media screen and (max-width: 400px) {
+  .notif {
+    margin-top: 0px;
+    width: 80%;
+    height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+    padding-top: 20px; /* Ajoute un peu d'espace en haut à l'intérieur de .notif */
+    padding-bottom: 20px; /* Ajoute un peu d'espace en bas à l'intérieur de .notif */
+  }
+
+  .notif #title {
+    font-size: 1.3em; /* Réduit la taille du titre du formulaire */
+    margin-bottom: 10px;
+  }
+  .home {
+    width: 40px;
+    height: 40px;
+  }
+  h1 {
+    font-size: 1.5em; /* Réduit la taille du titre sur les petits écrans */
+  }
+
+}
+ 
+
