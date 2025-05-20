@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 0.5rem;
             margin-top: 0.3rem;
             background-color: white;
-            color: #fff;
+            color: black;
             border: none;
             border-radius: 4px;
         }
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-top: 1rem;
             padding: 1rem;
             border-radius: 5px;
-            background-color: #2e2e2e;
+            background-color: #2ecc71;
         }
 
         #hrbas {

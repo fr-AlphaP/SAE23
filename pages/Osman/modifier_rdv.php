@@ -60,14 +60,14 @@ if (!$rdv) {
     <title>Modifier le rendez-vous</title>
     <style>
         body {
-            background-color: #121212;
-            color: #f5f5f5;
+            background-color:rgb(255, 255, 255);
+            color:rgb(0, 0, 0);
             font-family: Arial, sans-serif;
         }
         .container {
             max-width: 600px;
             margin: 2rem auto;
-            background-color: #1e1e1e;
+            background-color:rgb(224, 224, 224);
             padding: 2rem;
             border-radius: 10px;
         }
@@ -78,8 +78,8 @@ if (!$rdv) {
         input, select {
             width: 100%;
             padding: 0.5rem;
-            background-color: #2c2c2c;
-            color: white;
+            background-color:white;
+            color: black;
             border: 1px solid #444;
             border-radius: 4px;
         }
@@ -98,9 +98,122 @@ if (!$rdv) {
             color: #00bcd4;
             text-decoration: none;
         }
+
+                #hrbas {
+            margin-top: 5vw;
+            margin-bottom: 5vw;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            height: 2px;
+            background-color: #2ecc71;
+            border: none;
+        }
+
+        
+        .footer {
+            font-size: 2.5vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 0;
+            height: 10vw;
+            width: 100%;
+            /* background-color: red; */
+        }
+
+        .footer p {
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+        #hrbas {
+            /* margin-top: 5vh; */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: 2px;
+            background-color: #2ecc71;
+            border: none;
+        }
+
+        /* Header */
+        .header {
+            margin: 0;
+            padding: 0;
+            height: 20vh;
+            border-top: 2px solid #2ecc71;
+            /* border-bottom: 2px solid #2ecc71; */
+            display: flex;
+            /* background-color: red; */
+            
+        }
+
+
+        .header h1 {
+            font-size: 2rem;
+            color: black;
+            margin: 0;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            color: black;
+            margin-top: -20px;
+            padding-left: 1rem;
+            text-align: left;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .logo {
+            margin-top: -8vh;
+            /* background-color: blue; */
+        }
+
+        .backtqt {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logoback {
+            width: 80px;
+            height: 80px;
+            margin-top : -3vh;
+            margin-right: 10px; /* Ajout d'une marge pour l'espacement */
+            display: block; /* S'assure que les dimensions sont respectées */
+            background-color: #2ecc71;
+            border-radius: 10%; 
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <div class="title"> 
+            <h1>BMW Osval</h1>
+            <h2>Le plaisir de conduire</h2>
+        </div>
+        <div class="logo-container">
+            <img class="logo" src="../../styles/img/bmw_logo.webp" alt="Logo BMW" style="width: 80px; height: auto; margin-left: 1rem;">
+            <div class="backtqt">
+                <a href="../Valentin/espace_employe.php"><img class="logoback" src="../../styles/svg/home.svg" alt="Logo Osval" style="margin-left: 1rem;"></a>
+            </div>
+        </div>
+    </div>
 <div class="container">
     <h1>Modifier un rendez-vous</h1>
     <form method="POST">
@@ -141,5 +254,12 @@ if (!$rdv) {
 
     <a href="lire_rdv.php">← Retour à la liste des rendez-vous</a>
 </div>
+    <hr id="hrbas">
+    <div class="footer">
+        <p>© 2025 BMW Osval. Tous droits réservés.</p>
+        <p>Mentions légales | Politique de confidentialité</p>
+        <p><b>Ce site n'est pas un site commercial, il a été réalisé dans le cadre d'un projet Fictif</b></p>
+        <p><b>IUT de Béziers</b></p>
+    </div>
 </body>
 </html>

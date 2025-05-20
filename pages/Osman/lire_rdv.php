@@ -7,16 +7,16 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-// Suppression si demandé
+// Masquer un rendez-vous (mettre supprimer = 1)
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id_rdv'])) {
-    $stmt = $pdo->prepare("DELETE FROM RDV WHERE id_rdv = :id_rdv");
-    $stmt->execute([':id_rdv' => $_GET['id_rdv']]);
+    $stmt = $pdo->prepare("UPDATE RDV SET supprimer = 1 WHERE id_rdv = :id_rdv");
+    $stmt->execute([':id_rdv' => intval($_GET['id_rdv'])]);
     header("Location: lire_rdv.php?message=supprimé");
     exit();
 }
 
-// Récupération des rendez-vous
-$stmt = $pdo->query("SELECT * FROM RDV ORDER BY date, heure");
+// Récupération des rendez-vous (afficher uniquement ceux où supprimer = 0)
+$stmt = $pdo->query("SELECT * FROM RDV WHERE supprimer = 0 ORDER BY date, heure");
 $rdvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -32,7 +32,7 @@ $rdvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             font-family: Arial, sans-serif;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 2rem;
             background-color:rgb(224, 224, 224);
@@ -119,6 +119,7 @@ $rdvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 
@@ -181,7 +182,7 @@ $rdvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <a href="demande_rdv.php" class="add-button">+ Ajouter un rendez-vous</a>
 
     <?php if (isset($_GET['message']) && $_GET['message'] == 'supprimé'): ?>
-        <p style="color: lightgreen;">Rendez-vous supprimé avec succès.</p>
+        <p style="color: lightgreen;">Rendez-vous masqué avec succès.</p>
     <?php elseif (isset($_GET['message']) && $_GET['message'] == 'modifie'): ?>
         <p style="color: lightgreen;">Rendez-vous modifié avec succès.</p>
     <?php endif; ?>
@@ -215,7 +216,7 @@ $rdvs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= htmlspecialchars($rdv['nom_conseiller']) ?></td>
                 <td class="actions">
                     <a href="modifier_rdv.php?id_rdv=<?= $rdv['id_rdv'] ?>">Modifier</a>
-                    <a href="lire_rdv.php?action=delete&id_rdv=<?= $rdv['id_rdv'] ?>" onclick="return confirm('Supprimer ce rendez-vous ?')">Supprimer</a>
+                    <a href="lire_rdv.php?action=delete&id_rdv=<?= $rdv['id_rdv'] ?>" onclick="return confirm('Supprimer ce rendez-vous ?')">Suppprimer</a>
                 </td>
             </tr>
             <?php endforeach; ?>

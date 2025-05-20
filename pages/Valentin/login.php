@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     try {
-        $pdo = new PDO('mysql:host=localhost;charset=utf8;dbname=db_MALOT', '22404768', '728596');
+        $pdo = new PDO("mysql:host=localhost;dbname=db_CETINER;charset=utf8", "22409662", "726209");
 
         $statement = $pdo->prepare("SELECT * FROM Logins WHERE username = :username");
         $statement->execute([':username' => $username]);

@@ -207,6 +207,7 @@ if (isset($_GET['id_plaque'])) {
         }
 
         .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 

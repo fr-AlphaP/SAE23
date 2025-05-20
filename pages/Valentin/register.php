@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             // Connexion à la base de données
-            $pdo = new PDO('mysql:host=localhost;charset=utf8;dbname=db_MALOT', '22404768', '728596');
+            $pdo = new PDO("mysql:host=localhost;dbname=db_CETINER;charset=utf8", "22409662", "726209");
 
             // Hachez le mot de passe
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);

@@ -1,7 +1,7 @@
 <?php
 // Connexion à la base de données
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=db_MALOT;charset=utf8", "22404768", "728596");
+    $pdo = new PDO("mysql:host=localhost;dbname=db_CETINER;charset=utf8", "22409662", "726209");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
     die("Erreur de connexion : " . $e->getMessage());
@@ -222,7 +222,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             flex-grow: 1;
         }
 
-        .logo {
+    .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 

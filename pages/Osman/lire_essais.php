@@ -1,6 +1,6 @@
 <?php
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=db_MALOT;charset=utf8", "22404768", "728596");
+    $pdo = new PDO("mysql:host=localhost;dbname=db_CETINER;charset=utf8", "22409662", "726209");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
     die("Erreur de connexion : " . $e->getMessage());
@@ -124,6 +124,7 @@ $essais = $pdo->query("SELECT * FROM Essais ORDER BY date_essai DESC")->fetchAll
         }
 
         .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 

@@ -1,6 +1,6 @@
 <?php
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=db_MALOT;charset=utf8", "22404768", "728596");
+    $pdo = new PDO('mysql:host=localhost;charset=utf8;dbname=db_CETINER', '22409662', '726209');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
     die("Erreur : " . $e->getMessage());
@@ -134,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         }
 
         .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 

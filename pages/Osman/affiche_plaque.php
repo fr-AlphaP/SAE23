@@ -147,6 +147,7 @@ $plaques = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 

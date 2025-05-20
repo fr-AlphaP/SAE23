@@ -198,6 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .logo {
+            margin-top: -8vh;
             /* background-color: blue; */
         }
 
