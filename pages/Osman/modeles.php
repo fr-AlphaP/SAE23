@@ -1,4 +1,23 @@
 <!-- modeles.php -->
+<?php
+// Connexion à la base de données
+try {
+    $pdo = new PDO('mysql:host=localhost;charset=utf8;dbname=db_CETINER', '22409662', '726209');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+}
+
+// Vérifiez si une action de suppression est demandée
+if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id_mat'])) {
+    $id_mat = (int) $_GET['id_mat'];
+    $stmt = $pdo->prepare("UPDATE Stock SET supprimer = 1 WHERE id_mat = :id_mat");
+    $stmt->execute([':id_mat' => $id_mat]);
+    header('Location: modeles.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -200,22 +219,6 @@
     <h1>Nos modèles disponibles</h1>
     <div class="container">
     <?php
-    try {
-        $pdo = new PDO('mysql:host=localhost;charset=utf8;dbname=db_CETINER', '22409662', '726209');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        die("Erreur de connexion : " . $e->getMessage());
-    }
-
-    // Vérifiez si une action de suppression est demandée
-    if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id_mat'])) {
-        $id_mat = (int) $_GET['id_mat'];
-        $stmt = $pdo->prepare("UPDATE Stock SET supprimer = 1 WHERE id_mat = :id_mat");
-        $stmt->execute([':id_mat' => $id_mat]);
-        header('Location: modeles.php');
-        exit();
-    }
-
     // Requête pour récupérer toutes les annonces où supprimer = 0
     $sql = "SELECT * FROM Stock WHERE supprimer = 0 ORDER BY date_ajout DESC";
     $stmt = $pdo->query($sql);

@@ -6,7 +6,16 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-$essais = $pdo->query("SELECT * FROM Essais ORDER BY date_essai DESC")->fetchAll(PDO::FETCH_ASSOC);
+// Masquer une annonce (mettre supprimer = 1)
+if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id_essai'])) {
+    $stmt = $pdo->prepare("UPDATE Essais SET supprimer = 1 WHERE id_essai = :id_essai");
+    $stmt->execute([':id_essai' => intval($_GET['id_essai'])]);
+    header("Location: lire_essais.php?message=supprimé");
+    exit();
+}
+
+// Récupération des essais (afficher uniquement ceux où supprimer = 0)
+$essais = $pdo->query("SELECT * FROM Essais WHERE supprimer = 0 ORDER BY date_essai DESC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +82,11 @@ $essais = $pdo->query("SELECT * FROM Essais ORDER BY date_essai DESC")->fetchAll
 
         .annuler {
             background-color: #c62828;
+            color: white;
+        }
+
+        .supprimer {
+            background-color: #d32f2f;
             color: white;
         }
 
@@ -183,6 +197,10 @@ $essais = $pdo->query("SELECT * FROM Essais ORDER BY date_essai DESC")->fetchAll
 
 <h2>Demandes d'essai</h2>
 
+<?php if (isset($_GET['message']) && $_GET['message'] == 'supprimé'): ?>
+    <p style="color: lightgreen;">Annonce supprimée avec succès.</p>
+<?php endif; ?>
+
 <table>
     <thead>
         <tr>
@@ -218,6 +236,7 @@ $essais = $pdo->query("SELECT * FROM Essais ORDER BY date_essai DESC")->fetchAll
                     <input type="hidden" name="status" value="annulé">
                     <button type="submit" class="annuler">❌ Annuler</button>
                 </form>
+                <a class="supprimer" href="lire_essais.php?action=delete&id_essai=<?= $essai['id_essai'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')">❌ Supprimer</a>
             </td>
         </tr>
         <?php endforeach; ?>

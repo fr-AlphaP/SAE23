@@ -7,18 +7,18 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
-// Suppression d'une entrée
+// Masquer une annonce (mettre supprimer = 1)
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id_plaque'])) {
-    $id_plaque = $_GET['id_plaque'];
-    $sql = "DELETE FROM Plaque WHERE id_plaque = :id_plaque";
+    $id_plaque = intval($_GET['id_plaque']);
+    $sql = "UPDATE Plaque SET supprimer = 1 WHERE id_plaque = :id_plaque";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':id_plaque' => $id_plaque]);
-    header('Location: afficher_plaques.php');
+    header('Location: affiche_plaque.php?message=supprimé');
     exit();
 }
 
-// Récupération des données
-$sql = "SELECT * FROM Plaque";
+// Récupération des données (afficher uniquement celles où supprimer = 0)
+$sql = "SELECT * FROM Plaque WHERE supprimer = 0";
 $stmt = $pdo->query($sql);
 $plaques = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -57,15 +57,15 @@ $plaques = $stmt->fetchAll(PDO::FETCH_ASSOC);
         tr:nth-child(even) {
             background-color:rgb(224, 224, 224);
         }
-        .actions #mod {
-            color:rgb(0, 152, 212);
+        .actions a {
             text-decoration: none;
             margin-right: 0.5rem;
         }
-        .actions #sup {
+        .actions .modifier {
+            color:rgb(0, 152, 212);
+        }
+        .actions .supprimer {
             color:rgb(212, 0, 0);
-            text-decoration: none;
-            margin-right: 0.5rem;
         }
 
         #hrbas {
@@ -186,6 +186,11 @@ $plaques = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="container">
         <h1>Administration - Liste des plaques</h1>
+
+        <?php if (isset($_GET['message']) && $_GET['message'] == 'supprimé'): ?>
+            <p style="color: lightgreen;">Plaque masquée avec succès.</p>
+        <?php endif; ?>
+
         <table>
             <thead>
                 <tr>
@@ -206,8 +211,8 @@ $plaques = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= htmlspecialchars($plaque['serie_vehicule']) ?></td>
                     <td><?= htmlspecialchars($plaque['plaque']) ?></td>
                     <td class="actions">
-                        <a id="mod" href="modifier_lire_plaque.php?id_plaque=<?= $plaque['id_plaque'] ?>">Modifier</a>
-                        <a id="sup" href="afficher_plaques.php?action=delete&id_plaque=<?= $plaque['id_plaque'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette entrée ?')">Supprimer</a>
+                        <a class="modifier" href="modifier_lire_plaque.php?id_plaque=<?= $plaque['id_plaque'] ?>">Modifier</a>
+                        <a class="supprimer" href="affiche_plaque.php?action=delete&id_plaque=<?= $plaque['id_plaque'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir masquer cette plaque ?')">Supprimer</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
